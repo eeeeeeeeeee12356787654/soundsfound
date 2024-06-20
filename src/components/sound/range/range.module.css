@@ -70,3 +70,8 @@
     outline-offset: 0.125rem;
   }
 }
+
+/* For accessibility */
+.rangeLabel {
+  display: none;
+}

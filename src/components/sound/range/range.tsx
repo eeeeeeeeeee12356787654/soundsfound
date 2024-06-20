@@ -14,19 +14,25 @@ export function Range({ id, label }: RangeProps) {
   const locked = useSoundStore(state => state.locked);
 
   return (
-    <input
-      aria-label={`${label} sound volume`}
-      autoComplete="off"
-      className={styles.range}
-      disabled={!isSelected}
-      max={100}
-      min={0}
-      type="range"
-      value={volume * 100}
-      onClick={e => e.stopPropagation()}
-      onChange={e =>
-        !locked && isSelected && setVolume(id, Number(e.target.value) / 100)
-      }
-    />
+    <>
+      <label
+        className={styles.rangeLabel}
+        htmlFor={`${id}-range`}
+      >{`${label} sound volume`}</label>
+      <input
+        autoComplete="off"
+        className={styles.range}
+        disabled={!isSelected}
+        id={`${id}-range`}
+        max={100}
+        min={0}
+        type="range"
+        value={volume * 100}
+        onClick={e => e.stopPropagation()}
+        onChange={e =>
+          !locked && isSelected && setVolume(id, Number(e.target.value) / 100)
+        }
+      />
+    </>
   );
 }
