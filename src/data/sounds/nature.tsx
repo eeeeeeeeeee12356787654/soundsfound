@@ -18,7 +18,7 @@ export const nature: Category = {
     {
       icon: <BiWater />,
       id: 'river',
-      label: 'River',
+      label: 'ee',
       src: '/sounds/nature/river.mp3',
     },
     {
